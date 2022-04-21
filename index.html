@@ -13,7 +13,10 @@
     <div id="app">
 
         <div class="container" >
-            <div class="slider-wrapper" tabindex="0">
+            <div class="slider-wrapper" tabindex="0"
+            @mouseover="stopPlay"
+            @mouseleave="autoPlay"
+            >
 
                 <!-- immagine grossa -->
                 <div class="item">
@@ -25,7 +28,6 @@
                         </p>
                     </div>
                 </div>
-
 
                 <div class="thumbs">
 
@@ -42,6 +44,10 @@
                 </div>
 
             </div>
+
+            <button @click="stopPlay">Stop</button>
+            <button @click="autoPlay">Avvia</button>
+
         </div>
 
     </div>

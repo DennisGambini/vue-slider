@@ -29,7 +29,8 @@ const app = new Vue({
             }
         ], // fine slides
         active: 'active',
-        currentIndex: 0
+        currentIndex: 0,
+        myTimer: null
     },
     methods:{
         prevFunction(){
@@ -37,6 +38,18 @@ const app = new Vue({
         },
         nextFunction(){
             this.currentIndex === 4 ? this.currentIndex = 0 : this.currentIndex ++;
+        },
+        autoPlay(){
+            this.myTimer = setInterval(
+                this.nextFunction, 1000
+            )
+        },
+        stopPlay(){
+            clearInterval(this.myTimer);
+            console.log("cleared")
         }
+    },
+    mounted(){
+        this.autoPlay()
     }
 })
