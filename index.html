@@ -37,7 +37,7 @@
 
 
                     <!-- immagini piccole -->
-                    <div class="thumb" v-for="(item, index) in slides" :class="index === currentIndex ? active : '' " >
+                    <div class="thumb" v-for="(item, index) in slides" :class="index === currentIndex ? active : '' " @click="currentIndex = index" :key="index">
                         <img :src="item.image" alt="item.title"/>
                     </div>
                     
